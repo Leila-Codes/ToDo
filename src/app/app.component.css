@@ -1,0 +1,14 @@
+.container {
+  width: 98%;
+  margin: 5px 1%;
+}
+
+todo-list {
+  width: 95%;
+  display: flex;
+
+  margin: 15px auto;
+  flex-direction: column;
+
+  position: relative;
+}

@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="todo-circle" [ngClass]="{'in-progress': info?.inProgress, 'completed': info?.completed}">
+    <fa-icon class="text-center fa-lg" [icon]="completeIcon" *ngIf="info?.completed"></fa-icon>
+    <fa-icon class="text-center fa-lg" [icon]="progressIcon" *ngIf="info?.inProgress"></fa-icon>
+  </div>
+
+  <div class="todo-label" [ngClass]="{'in-progress': info?.inProgress, 'completed': info?.completed}">
+    <h1>{{info?.label}}</h1>
+    <h4>{{info?.description}}</h4>
+  </div>
+
+  <div class="item-actions" >
+    <button (click)="info?.start()" [disabled]="info?.inProgress || info?.completed">Start</button>
+    <button (click)="completeItem()" [disabled]="info?.completed">Complete</button>
+    <button (click)="removeItem()">Remove</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="todo-timer" [ngClass]="{'visible': timerEnabled && (info?.inProgress || info?.completed)}">
+    {{info?.duration | duration}}
+  </div>
+</div>
+

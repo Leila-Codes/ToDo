@@ -1,0 +1,97 @@
+.row {
+  display: flex;
+}
+
+/* -------------- Circle Indicator ------------- */
+/* --------------------------------------------- */
+.todo-circle {
+  background-color: var(--luna-bg-dark);
+  /*margin: 5px auto;*/
+  margin: 6px;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  border: 6px solid var(--luna-blue-3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: border-top-color .25s linear, border-left-color .5s linear, border-bottom-color .75s linear, border-right-color 1s linear;
+}
+.todo-circle.in-progress {
+  border-top-color: var(--luna-warn-3);
+  border-left-color: var(--luna-warn-3);
+  border-bottom-color: var(--luna-warn-3);
+  border-right-color: var(--luna-warn-3);
+
+  color: var(--luna-warn-3);
+}
+
+.todo-circle.completed {
+  border-top-color: var(--luna-success-3);
+  border-left-color: var(--luna-success-3);
+  border-bottom-color: var(--luna-success-3);
+  border-right-color: var(--luna-success-3);
+
+  color: var(--luna-success-3);
+}
+/* --------------------------------------------- */
+
+
+/* --------------- Label Styling --------------- */
+/* --------------------------------------------- */
+.todo-label, .todo-timer {
+  flex-grow: 1;
+}
+
+.todo-label.in-progress {
+  color: var(--luna-warn-3);
+}
+
+.todo-label.completed {
+  color: var(--luna-success-3);
+}
+
+.todo-label > h1, h4 {
+  margin: 4px 6px;
+  transition: color .75s;
+}
+/* --------------------------------------------- */
+
+/* -------------- Action Buttons ------------- */
+/* ------------------------------------------- */
+.item-actions {
+  justify-self: end;
+  /*align-self: end;*/
+  display: flex;
+}
+/* --------------------------------------------- */
+
+
+/* --------------- Clock Component ------------- */
+/* --------------------------------------------- */
+.todo-timer {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  font-size: 22pt;
+  padding-right: 20px;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateX(20%);
+  transition: .5s;
+
+  /*color: var(--luna-white);*/
+  font-family: NovaSquare;
+
+  /*max-width: 26%;*/
+}
+
+.todo-timer.visible {
+  opacity: 1;
+  transform: none;
+}
+/* --------------------------------------------- */

@@ -1,0 +1,21 @@
+<div class="todo-trackbar" [hidden]="items.length < 1">
+  <div class="todo-progress" id="progressIndicator" [ngStyle]="{'height': progress}"></div>
+</div>
+
+<h3 style="font-style: italic" *ngIf="items.length < 1">No Items</h3>
+
+<todo-item *ngFor="let item of items" [info]="item"></todo-item>
+
+<div class="todo-timer" [ngClass]="{'visible': timerEnabled}">
+  Total Time:
+  {{totalTime() | duration}}
+</div>
+
+<div style="float: right; display: flex;">
+  <button (click)="toggleTimers()">
+    {{ timerEnabled ? 'Disable' : 'Enable' }}
+    Timers
+  </button>
+
+  <button (click)="next()">Next</button>
+</div>

@@ -1,1 +1,101 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --luna-text: #00B7FF;
+
+  --luna-bg-dark: #1d1f2e;
+
+  --luna-white: white;
+
+  --luna-blue-1: #1e275e;
+  --luna-blue-2: #294678;
+  --luna-blue-3: #3a6edc;
+
+  --luna-red-1: #6a011c;
+  --luna-red-2: #c10121;
+  --luna-red-3: #ff234f;
+
+  --luna-success-1: #004d00;
+  --luna-success-2: #008600;
+  --luna-success-3: #00c900;
+
+  --luna-warn-1: #6f7700;
+  --luna-warn-2: #938700;
+  --luna-warn-3: #f3f300;
+
+  --luna-panel-bg: rgba(57, 62, 64, 0.34);
+
+  --luna-frost-bg: rgba(100, 100, 100, 0.25);
+  --luna-frost-outline: rgb(200, 200, 200);
+  --luna-blue-outline: rgb(68, 169, 224);
+}
+
+@font-face {
+  src: url("assets/fonts/NovaSquare-Regular.ttf");
+  font-family: NovaSquare;
+}
+
+body {
+  color: var(--luna-text);
+  background: var(--luna-bg-dark);
+
+  font-family: NovaSquare;
+
+  overflow-x: hidden;
+}
+
+button {
+  margin: 2px;
+  padding: 5px 10px;
+
+  border-radius: 15px;
+  border: 1px solid var(--luna-blue-3);
+
+  background: var(--luna-bg-dark);
+  color: var(--luna-text);
+  font-size: 14pt;
+  font-family: NovaSquare;
+
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--luna-blue-1);
+}
+
+button:disabled {
+  border: 1px solid #001726;
+  color: #002f4d;
+  background: var(--luna-bg-dark);
+
+
+  cursor: default;
+}
+
+
+.luna-input {
+  width: 90%;
+
+  background: var(--luna-bg-dark);
+  color: var(--luna-text);
+  font-family: NovaSquare;
+
+  font-size: 12pt;
+
+  border: 1px solid var(--luna-blue-2);
+  border-radius: 10px;
+  padding: 4px 8px;
+  margin: 5px;
+
+  transition: .5s;
+}
+
+.luna-input:hover {
+  background: var(--luna-blue-1);
+  border-color: var(--luna-blue-3);
+}
+
+.luna-input:focus {
+  width: 92%;
+  background: var(--luna-blue-1);
+
+}

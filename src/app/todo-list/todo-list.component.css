@@ -1,0 +1,54 @@
+todo-item {
+  /*display: grid;*/
+  /*grid-template-columns: 5vw auto 5vw;*/
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  animation: item-enter .5s forwards;
+}
+
+@keyframes item-enter {
+  from {
+    transform: translateY(25%);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.todo-trackbar {
+  z-index: -1;
+  border: 1px solid var(--luna-blue-2);
+  border-radius: 10px;
+
+  margin: 5px 0 0;
+
+  width: 15px;
+  height: 90%;
+
+
+  position: absolute;
+  left: 24px;
+
+  overflow: hidden;
+
+  clip-path: polygon(0 0, 0 calc(100% - 20px), 100% calc(100% - 20px), 100% 100%, 100% 0);
+}
+
+.todo-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  margin: 0; padding: 0;
+
+  width: 100%;
+  height: 0;
+
+  background-color: var(--luna-success-3);
+
+  transition: height 1s linear;
+}
